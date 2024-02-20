@@ -1,0 +1,103 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "imports": [
+      "_internal.js"
+    ],
+    "isEntry": true,
+    "src": ".svelte-kit/generated/server/internal.js"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js"
+  },
+  "_index.js": {
+    "file": "chunks/index.js"
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_private.js": {
+    "file": "chunks/private.js"
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_exports.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "imports": [
+      "_internal.js",
+      "_index.js",
+      "_exports.js",
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
+  },
+  "src/params/integer.ts": {
+    "file": "entries/matchers/integer.js",
+    "isEntry": true,
+    "src": "src/params/integer.ts"
+  },
+  "src/routes/+layout.svelte": {
+    "css": [
+      "_app/immutable/assets/_layout.MAwRljNJ.css"
+    ],
+    "file": "entries/pages/_layout.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+layout.svelte"
+  },
+  "src/routes/+page.server.ts": {
+    "file": "entries/pages/_page.server.ts.js",
+    "imports": [
+      "_private.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+page.server.ts"
+  },
+  "src/routes/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.fYnmHc-f.css"
+    ],
+    "file": "entries/pages/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+page.svelte"
+  },
+  "src/routes/tv-shows/[id=integer]/[[slug]]/+page.server.ts": {
+    "file": "entries/pages/tv-shows/_id_integer_/__slug__/_page.server.ts.js",
+    "imports": [
+      "_private.js",
+      "_index.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/tv-shows/[id=integer]/[[slug]]/+page.server.ts"
+  },
+  "src/routes/tv-shows/[id=integer]/[[slug]]/+page.svelte": {
+    "css": [
+      "_app/immutable/assets/_page.crggmvye.css"
+    ],
+    "file": "entries/pages/tv-shows/_id_integer_/__slug__/_page.svelte.js",
+    "imports": [
+      "_ssr.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/tv-shows/[id=integer]/[[slug]]/+page.svelte"
+  }
+}

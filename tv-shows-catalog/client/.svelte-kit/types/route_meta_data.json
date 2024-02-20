@@ -1,0 +1,8 @@
+{
+	"/": [
+		"src/routes/+page.server.ts"
+	],
+	"/tv-shows/[id=integer]/[[slug]]": [
+		"src/routes/tv-shows/[id=integer]/[[slug]]/+page.server.ts"
+	]
+}
