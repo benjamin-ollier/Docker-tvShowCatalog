@@ -1,2 +1,19 @@
-# Définir cette configuration Compose afin de lancer l'application
-# The Computer Club's Blog en production.
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: kaborealassane/projet-docker:2.0.0
+    environment:
+      - DATABASE_URL:postgres://toto:toto@db:5432/blog
+      - ROCKET_ADDRESS:0.0.0.0
+    ports:
+      - "8000:8000"
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_PASSWORD:toto
+      - POSTGRES_DB :blog
+      - POSTGRES_USER:toto
+    ports:
+      - "5432:5432"
