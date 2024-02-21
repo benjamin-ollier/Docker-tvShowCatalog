@@ -1,1 +1,9 @@
-# Créer un Dockerfile pour cette application en mode production
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY . .
+
+RUN npm install
+

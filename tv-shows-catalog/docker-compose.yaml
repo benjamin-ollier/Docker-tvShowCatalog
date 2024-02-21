@@ -1,2 +1,52 @@
-# Définir cette configuration Compose afin de lancer l'application
-# Make Me Watch en production.
+version: '3.8'
+
+services:
+  server:
+    container_name: server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+  client-dev:
+    container_name: client-dev
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+      - API_BASE_URL=http://server:3000
+    command: npm run dev
+    depends_on:
+      - server
+
+  client-preview:
+    container_name: client-preview
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "4173:4173"
+    environment:
+      - API_BASE_URL=http://server:3000
+    command: npm run preview
+    depends_on:
+      - server
+
+  client-production:
+    container_name: client-production
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3198:3000"
+    environment:
+      - API_BASE_URL=http://server:3000
+    command: ["sh", "-c", "npm run build && node build/index.js"]
+    depends_on:
+      - server
