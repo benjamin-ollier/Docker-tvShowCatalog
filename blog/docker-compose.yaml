@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    environment:
+      - DATABASE_URL=${DB_URL}
+      -  ROCKET_ADDRESS=${ROCKET_ADDRESS}
+    ports:
+      - "${APP_PORT}:8000"
+    depends_on:
+    - db
+    command: bash -c "sleep 5 && diesel migration run && ./blog"
+  db:
+    image: postgres:16-alpine
+    ports:
+    - "${DB_PORT}:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+

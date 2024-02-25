@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  server:
+    container_name: server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "${SERVER_PORT}:3000"
+
+  # client-dev:
+  #   container_name: client-dev
+  #   build:
+  #     context: ./client
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "${CLIENT_DEV_PORT}:5173"
+  #   depends_on:
+  #     - server
+
+  client-production:
+    container_name: client-production
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "${CLIENT_PROD_PORT}:3000"
+    depends_on:
+      - server
